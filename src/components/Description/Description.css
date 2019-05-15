@@ -1,0 +1,5 @@
+@import url('../../animate.css');
+
+.word {
+  animation: bounceInDown 2s;
+}

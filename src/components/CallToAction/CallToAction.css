@@ -1,0 +1,16 @@
+.callToAction {
+  padding:17px 50px;
+  font-size: 1.2em;
+  background:none;
+  border:3px solid #e1c766;
+  border-radius:15px;
+  color:lightgray;
+  font-family: 'Comfortaa', sans-serif;
+  transition:background 500ms, color 500ms;
+  cursor: pointer;
+}
+
+.callToAction:hover{
+  background:#e1c766;
+  color:#252627;
+}

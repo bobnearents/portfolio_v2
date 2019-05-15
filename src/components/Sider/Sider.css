@@ -1,0 +1,75 @@
+.sidebar {
+  width:5vw;
+  background:#171717;
+  color:whitesmoke;
+  height:99.5vh;
+  display:inline-flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sidebar img {
+  width:65%;
+}
+
+.nav-icons {
+  text-align: center;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  height:30%;
+  justify-content: space-between;
+}
+
+.nav-icons .iconify {
+  font-size: 1.5em;
+}
+
+.nav-icons div {
+  
+  height:100%;
+}
+ 
+.nav-icons div a {
+  height:100%;
+  color: lightgray;
+  transition:all 200ms;
+  text-decoration: none;
+}
+
+.nav-icons div:hover a, .contact-icons a:hover, .selected {
+  color: #e1c766;
+  transition:color 500ms;
+}
+
+.nav-icons div:hover a span{
+  display: none;
+}
+
+.home-icon:hover a:after{ 
+  content: 'home';
+}
+.about-icon:hover a:after{ 
+  content: 'about';
+}
+.my-work-icon:hover a:after{ 
+  content: 'my work';
+}
+.resume-icon:hover a:after{ 
+  content: 'resume';
+}
+
+.contact-icons {
+  display:flex;
+  height:12%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.contact-icons a {
+  color:lightgray;
+}
+
+
+
