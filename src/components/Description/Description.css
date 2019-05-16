@@ -1,5 +1,6 @@
 @import url('../../animate.css');
 
-.word {
-  animation: bounceInDown 2s;
-}
+.typewrite > .wrap { 
+  border-right: 0.08em solid #fff}
+
+

@@ -1,0 +1,71 @@
+.aboutContainer {
+  background:#252627;
+  width:95vw;
+  margin-left:5vw;
+  height:100vh;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+.about {
+  color:whitesmoke;
+  font-size: 1.2em;
+  width:60%;
+  height:100%;
+  padding:0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.about h2{
+  font-size: 2em;
+  align-self: center;
+  margin-bottom:30px;
+  color:#e1c766;
+  text-shadow: 1px 1px 0 whitesmoke;
+  font-family:'Chivo';
+}
+
+.about p {
+  line-height: 25px;
+  letter-spacing: .5px;
+  word-spacing: 2px;
+}
+
+.about p::first-letter {
+  color:#e1c766;
+  
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+
+@media(max-width:1000px) {
+  .about {
+    width:100%;
+    display:block;
+    color:whitesmoke;
+    font-size: 1.2em;
+    height: initial;
+  }
+
+  .about h2 {
+    text-align: center
+  }
+}
+
+@media(max-width:668px) {
+
+  .aboutContainer{
+    width:100vw;
+    margin:0;
+  }
+  .about {
+    padding:20px;
+    width:100vw;
+  }
+}

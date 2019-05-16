@@ -6,7 +6,7 @@ class CallToAction extends Component {
   render() { 
     return ( 
       <a href ='mailto:bobnearents@gmail.com'>
-        <button className = 'callToAction'>
+        <button className= 'hvr-shutter-in-horizontal callToAction'>
           Let's Talk
         </button>
       </a>

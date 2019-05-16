@@ -1,68 +1,79 @@
 import React, { Component } from 'react';
 import './Description.css';
-import {
-  CSSTransition,
-  TransitionGroup,
-} from 'react-transition-group';
 import 'animate.css'
 
 class Description extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-      words: ['full-stack web developer', 'husband', 'dad', 'cat enthusiast'],
-      counter:0,
-      inProp:false
-     }
+
+
+  componentWillUnmount(){
+    clearInterval(this.time)
   }
 
-  changeWord = () => {
-    this.toggleInProp(!true)
-    let counter = this.state.counter;
-    if(counter >= this.state.words.length-1){
-      counter = 0
+  componentDidMount(){
+    let TxtType = function (el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function () {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+      let that = this;
+      let delta = 200 - Math.random() * 100;
+
+      if (this.isDeleting) { delta /= 2; }
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 300;
+      }
+
+      this.time = setTimeout(function () {
+        that.tick();
+      }, delta);
+    };
+
+ 
+    const elements = document.getElementsByClassName('typewrite');
+    for (let i = 0; i < elements.length; i++) {
+      const toRotate = elements[i].getAttribute('data-type');
+      const period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtType(elements[i], JSON.parse(toRotate), period);
+      }
     }
-    else {
-      counter++
-    }
-    this.setState({
-      counter,
-    })
-    this.toggleInProp(!false)
+
   }
 
-  
-  componentDidMount() {
-    this.timer = setInterval(this.changeWord, 4000)
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
-
-  toggleInProp = (bool) => {
-    let inProp = bool
-    this.setState({
-      inProp,
-    })
-  }
-
-  renderText = () => {
-    return (
-      <span className = 'word'>
-        {this.state.words[this.state.counter]}
-      </span>
-    )
-  }
   render() { 
+
     return ( 
-      <CSSTransition in={this.state.inProp} classNames="my-node" timeout = {4000}>
-        <span className='word'>
-          a {this.renderText()}.
+      <span className='word'>
+          <span class="wrap"></span>
+        <span href="" class="typewrite" data-period="1000" data-type='[ "a web developer.", "a husband.", "a dad.", "a cat enthusiast.", "a board game connoisseur." ]'>
+          <span class="wrap"></span>
         </span>
-      </CSSTransition>
+      </span>
      );
   }
 }
- 
+
 export default Description;

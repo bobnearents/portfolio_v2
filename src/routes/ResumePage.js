@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Sider from "../components/Sider/Sider";
 
 
 class ResumePage extends Component {
@@ -10,6 +11,7 @@ class ResumePage extends Component {
   render() {
     return (
       <>
+        <Sider path={this.props.location.pathname} />
       </>
     );
   }

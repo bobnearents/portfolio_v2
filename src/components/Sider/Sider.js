@@ -10,38 +10,37 @@ class Sider extends Component {
     this.state = {  }
   }
   render() { 
-    let path = this.props.location.pathname
-    console.log(path)
+
     return ( 
       <div className = 'sidebar'>
-        <img className = 'logo' src = {logo} />
+        <Link to ='/' className = 'logo color-block'/>
         <nav className = 'nav-icons'>
 
           <div className= 'home-icon'>
             <Link to ='/'>
               <span>
-                <span className={`${(path === '/') ? 'selected' : null} iconify`} data-icon="simple-line-icons:home" data-inline="false" />
+                <span className={`${(this.props.path === '/') ? 'selected' : null} iconify`} data-icon="simple-line-icons:home" data-inline="false" />
               </span>
             </Link>
           </div>
           <div className= 'about-icon'>
             <Link to ='/about'>
               <span>
-                <span className="iconify" data-icon="simple-line-icons:user" data-inline="false"></span>
+                <span className={`${(this.props.path === '/about') ? 'selected' : null} iconify`} data-icon="simple-line-icons:user" data-inline="false"></span>
               </span>
             </Link>
           </div>
           <div className= 'my-work-icon'>
             <Link to ='projects'>
               <span>
-                <span className="iconify" data-icon="simple-line-icons:note" data-inline="false"></span>
+                <span className={`${(this.props.path === '/projects') ? 'selected' : null} iconify`} data-icon="simple-line-icons:note" data-inline="false"></span>
               </span>
             </Link>
           </div>
           <div className= 'resume-icon'>
             <Link to ='resume'>
               <span>
-                <span className="iconify" data-icon="simple-line-icons:book-open" data-inline="false"></span>
+                <span className={`${(this.props.path === '/resume') ? 'selected' : null} iconify`} data-icon="simple-line-icons:book-open" data-inline="false"></span>
               </span>
             </Link>
           </div>

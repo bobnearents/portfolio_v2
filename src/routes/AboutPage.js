@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Sider from "../components/Sider/Sider";
+import About from "../components/About/About";
 
 
 class AboutPage extends Component {
@@ -10,6 +12,8 @@ class AboutPage extends Component {
   render() {
     return (
       <>
+        <Sider path={this.props.location.pathname} />
+        <About/>
       </>
     );
   }

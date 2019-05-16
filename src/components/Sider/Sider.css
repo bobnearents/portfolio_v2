@@ -1,12 +1,14 @@
 .sidebar {
   width:5vw;
+  min-width: 60px;
+  position: fixed;
   background:#171717;
-  color:whitesmoke;
-  height:99.5vh;
+  height:100vh;
   display:inline-flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  z-index: 1;
 }
 
 .sidebar img {
@@ -27,36 +29,38 @@
 }
 
 .nav-icons div {
-  
-  height:100%;
+  height:20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
  
 .nav-icons div a {
-  height:100%;
-  color: lightgray;
+  color: gray;
   transition:all 200ms;
   text-decoration: none;
 }
 
 .nav-icons div:hover a, .contact-icons a:hover, .selected {
   color: #e1c766;
-  transition:color 500ms;
+  transition:color 0.5s ease-in-out;
 }
 
 .nav-icons div:hover a span{
   display: none;
 }
 
-.home-icon:hover a:after{ 
+.home-icon:hover a::after{ 
   content: 'home';
 }
-.about-icon:hover a:after{ 
+.about-icon:hover a::after{ 
   content: 'about';
 }
-.my-work-icon:hover a:after{ 
+.my-work-icon:hover a::after{ 
   content: 'my work';
 }
-.resume-icon:hover a:after{ 
+.resume-icon:hover a::after{ 
   content: 'resume';
 }
 
@@ -68,7 +72,32 @@
 }
 
 .contact-icons a {
-  color:lightgray;
+  color:gray;
+}
+
+.color-block {
+  width:90%;
+  background:#e1c766;
+  height:70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.color-block::after {
+  content:'B';
+  color:#252627;
+  font-family: 'Chivo';
+  font-size:3em;
+  font-weight:bold;
+  text-shadow:4px 4px 0 grays;
+}
+
+@media(max-width:668px) {
+  .sidebar {
+    display: none;
+  }
 }
 
 

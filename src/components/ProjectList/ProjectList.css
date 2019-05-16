@@ -1,0 +1,39 @@
+.projectsContainer {
+  width:95vw;
+  height:100vh;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  color:whitesmoke;
+}
+
+.projectsHeader {
+  height:20%;
+}
+.projectList {
+  height:80%;
+  align-items:center;
+  flex-wrap: wrap;  
+  justify-content: space-around;
+}
+
+.projectsContainer div {
+  display:flex;
+}
+
+.projectsContainer h2 {
+  display: block;
+  width: 100%;
+  margin-top:5%;
+  font-family: 'Chivo';
+  font-size:2.5em;
+  color:#e1c766;
+  text-shadow: 1px 1px  whitesmoke;
+  align-self: flex-end;
+}
+
+.projectsContainer section {
+  width:100%;
+}
