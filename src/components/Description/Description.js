@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Description.css';
-import 'animate.css'
 
 class Description extends Component {
 

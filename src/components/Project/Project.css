@@ -19,6 +19,8 @@
 }
 .project img {
   border-radius:5px;
+  width:90%;
+  margin:auto;
 }
 
 .project a:hover {
@@ -53,6 +55,16 @@ li {
 }
 
 @media(max-width:668px) {
-  .project {
+  .desc {
+    margin-top:20px;
+  }
+
+  .projectButtons {
+    margin-top:20px;
+    font-size:.8em;
+  }
+
+  .projectsContainer {
+    padding:0;
   }
 }

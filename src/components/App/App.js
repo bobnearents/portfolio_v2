@@ -9,7 +9,6 @@ import ProjectsPage from '../../routes/ProjectsPage';
 import ResumePage from '../../routes/ResumePage'
 import logo from '../../assets/logo-opaque.png'
 import './App.css';
-import 'animate.css';
 
 function App({location}) {
 

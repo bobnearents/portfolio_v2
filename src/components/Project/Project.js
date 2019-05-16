@@ -10,7 +10,7 @@ class Project extends Component {
           <h3>{this.props.name}</h3>
         </li>
         <li>
-          <a href={this.props.live}><img src={this.props.screenshot} alt="" width="400" /></a>
+          <a href={this.props.live}><img src={this.props.screenshot}/></a>
         </li>
         <li class="desc">{this.props.desc}</li>
         <div className = 'projectButtons'>
