@@ -23,6 +23,7 @@
 }
 
 .about h2{
+  transition:margin 1s;
   font-size: 2em;
   align-self: center;
   margin-bottom:30px;
@@ -52,7 +53,7 @@
     font-size: 1.2em;
     height: initial;
   }
-
+  
   .about h2 {
     text-align: center
   }
@@ -63,9 +64,13 @@
   .aboutContainer{
     width:100vw;
     margin:0;
+    flex-direction: row;
   }
   .about {
     padding:20px;
     width:100vw;
+  }
+  .about h2 {
+    margin-top: 100px;
   }
 }
