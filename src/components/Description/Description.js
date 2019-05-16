@@ -68,7 +68,7 @@ class Description extends Component {
     return ( 
       <span className='word'>
           <span class="wrap"></span>
-        <span href="" class="typewrite" data-period="1000" data-type='[ "a web developer.", "a husband.", "a dad.", "a cat enthusiast.", "a board game connoisseur." ]'>
+        <span href="" class="typewrite" data-period="1000" data-type='[ "a web developer.", "a husband.", "a dad.", "a cat enthusiast." ]'>
           <span class="wrap"></span>
         </span>
       </span>

@@ -2,6 +2,7 @@ import React,{ Component } from 'react';
 import { Route, Switch, withRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Sider from '../Sider/Sider';
+import Header from '../Header/Header'
 import MainPage from '../../routes/MainPage';
 import AboutPage from '../../routes/AboutPage'
 import ProjectsPage from '../../routes/ProjectsPage';
@@ -15,8 +16,8 @@ function App({location}) {
     return (
 
         <div className="App">
-          <img src={logo} />
-          <Sider/>
+          <img id = 'logo' src={logo} />
+        <Header />
         <TransitionGroup className="transition-group">
           <CSSTransition
             key={location.key}
@@ -33,6 +34,7 @@ function App({location}) {
             </section>
           </CSSTransition>
         </TransitionGroup>
+        
         </div>
 
     );

@@ -1,10 +1,58 @@
 .project {
-  display: flex;
+  display: inline-flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background:red;
-  height:30%;
-  width:40%;
+  width:45%;
+  min-width:320px;
+  margin-bottom:50px;
+}
+
+.desc {
+  text-align: left;
+  padding:0 30px;
+  font-size:1.2em;
+}
+
+.project > * {
   margin-top:10px;
-  min-width: 300px;
+}
+.project img {
+  border-radius:5px;
+}
+
+.project a:hover {
+  text-decoration: none;
+}
+
+.project a {
+  color:whitesmoke;
+}
+.project h3 {
+  font-size:1.8em;
+}
+
+li {
+  list-style: none;
+}
+
+.projectButtons {
+  width:100%;
+  display:flex;
+  justify-content: space-around;
+}
+.projectButtons button {
+  padding:12px 35px;
+}
+
+
+@media(max-width:1000px) {
+  .project {
+  width:100%;
+  }
+}
+
+@media(max-width:668px) {
+  .project {
+  }
 }

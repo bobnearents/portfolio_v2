@@ -13,13 +13,14 @@
   display:flex;
 }
 
-.App img {
+#logo {
   position:fixed;
   bottom:0;
   right:10px;
   z-index: 10;
   width:40%;
   opacity: .3;
+  transition: opacity 300ms, width 300ms;
 }
 
 
@@ -50,4 +51,14 @@ section.route-section {
   width: 100%;
   top: 0;
   left: 0;
+}
+
+@media(max-width:668px) {
+  .mobileHeader{
+    display:flex
+  }
+
+  #logo {
+    display:none;
+  }
 }

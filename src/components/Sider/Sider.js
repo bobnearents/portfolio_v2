@@ -37,13 +37,13 @@ class Sider extends Component {
               </span>
             </Link>
           </div>
-          <div className= 'resume-icon'>
+          {/* <div className= 'resume-icon'>
             <Link to ='resume'>
               <span>
                 <span className={`${(this.props.path === '/resume') ? 'selected' : null} iconify`} data-icon="simple-line-icons:book-open" data-inline="false"></span>
               </span>
             </Link>
-          </div>
+          </div> */}
         </nav>  
         <footer className = 'contact-icons'>
           <a href= 'https://www.linkedin.com/in/bobnearents/'><span className="iconify" data-icon="simple-line-icons:social-linkedin" data-inline="false"></span></a>
