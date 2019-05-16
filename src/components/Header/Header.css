@@ -42,8 +42,13 @@
 .mobile-icons a:hover {
   transition:color 300ms;
 }
+.mobile-icons {
+  margin-top:20px;
+  display:none;
+}
 .mobile-icons a {
   color:#e1c766;
+  text-decoration: none;
 }
 
 .nav-icons-mobile{
@@ -62,4 +67,10 @@
 .nav-icons-mobile, .contact-icons-mobile {
   width:100%;
   display: flex;
+}
+
+@media(max-width:668px) {
+  .mobile-icons {
+  display:inherit;
+}
 }

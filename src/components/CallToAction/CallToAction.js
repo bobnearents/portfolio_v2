@@ -7,7 +7,7 @@ class CallToAction extends Component {
     return ( 
       <a href ='mailto:bobnearents@gmail.com'>
         <button className= 'hvr-shutter-in-horizontal callToAction'>
-          Let's Talk
+          Contact Me
         </button>
       </a>
      );

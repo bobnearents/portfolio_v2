@@ -43,21 +43,21 @@ class Header extends Component {
           <div >
             <Link onClick={this.handleClickHide} to='/'>
               <span>
-                <span className={`${(this.props.path === '/') ? 'selected' : null} iconify`} data-icon="simple-line-icons:home" data-inline="false" />
+                <span>home</span>
               </span>
             </Link>
           </div>
           <div >
             <Link onClick={this.handleClickHide} to='/about'>
               <span>
-                <span className={`${(this.props.path === '/about') ? 'selected' : null} iconify`} data-icon="simple-line-icons:user" data-inline="false"></span>
+                <span>about</span>
               </span>
             </Link>
           </div>
           <div >
             <Link onClick={this.handleClickHide} to='projects'>
               <span>
-                <span className={`${(this.props.path === '/projects') ? 'selected' : null} iconify`} data-icon="simple-line-icons:note" data-inline="false"></span>
+                <span>projects</span>
               </span>
             </Link>
           </div>

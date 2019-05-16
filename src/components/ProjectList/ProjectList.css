@@ -21,6 +21,12 @@
   margin:60px auto 40px;
 }
 
+.projectList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 @media(max-width:668px) {
   .projectsContainer{
     width:100vw;

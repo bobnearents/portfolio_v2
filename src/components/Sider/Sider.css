@@ -1,6 +1,6 @@
 .sidebar {
   width:5vw;
-  min-width: 60px;
+  min-width: 70px;
   position: fixed;
   background:#171717;
   height:100vh;
@@ -54,17 +54,25 @@
   content: 'about';
 }
 .my-work-icon:hover a::after{ 
-  content: 'my work';
+  content: 'projects';
 }
 .resume-icon:hover a::after{ 
   content: 'resume';
 }
 
+
+.contact-icons::before {
+  content:'Contact';
+  color:whitesmoke;
+  font-size: .8em;
+}
 .contact-icons {
   display:flex;
-  height:12%;
+  height:15%;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
+  font-size:1.2em;
 }
 
 .contact-icons a {
