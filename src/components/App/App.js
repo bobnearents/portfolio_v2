@@ -17,6 +17,7 @@ function App({location}) {
         <div className="App">
           <img id = 'logo' src={logo} />
         <Header />
+        <Sider />
         <TransitionGroup className="transition-group">
           <CSSTransition
             key={location.key}

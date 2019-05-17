@@ -13,6 +13,10 @@
   display:flex;
 }
 
+* .selected {
+  color: #e1c766;
+}
+
 #logo {
   position:fixed;
   bottom:0;
@@ -44,6 +48,9 @@
 
 div.transition-group {
   position: relative;
+  width:100vw;
+  height:100vh;
+  background:#252627;
 }
 
 section.route-section {

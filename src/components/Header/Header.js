@@ -1,26 +1,62 @@
 import React, { Component } from 'react';
 import './Header.css'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { withRouter } from "react-router";
 
 class Header extends Component {
-  state = {  }
+  state = { 
+    path:this.props.location.pathname,
+    mobileMenu:false
+   }
+
+   setPath = (path) => {
+    this.setState({
+      path
+    })
+   }
 
   handleClickShow = () => {
-    document.getElementById('mobile-icons').style.visibility = 'visible';
-    document.getElementById('mobile-icons').style.opacity = 1;
-    document.getElementById('lines').style.display = 'none'
-    document.getElementById('x').style.display = 'initial'
-    if (document.getElementById('projectsHeader')){
-      document.getElementById('projectsHeader').style['margin-top']='200px'
+    if (!this.state.mobileMenu) {
+      this.setState({
+        mobileMenu:true
+      })
+      document.getElementById('mobile-icons').style.top = '100px';
+      if (document.getElementById('projectsHeader')){
+        document.getElementById('projectsHeader').style['margin-top']='200px'
+      }
+
+      document.getElementById("first").classList.add("first", "stretcher");
+      document.getElementById("second").classList.add("second");
+      document.getElementById("third").classList.add("third", "stretcher");
+
+      setTimeout(() => {
+        document.getElementById("first").classList.remove("stretcher");
+        document.getElementById("third").classList.remove("stretcher");
+      }, 1500)
+    }
+    else{
+      this.setState({
+        mobileMenu:false
+      })
+      this.handleClickHide()
+      document.getElementById("first").classList.remove("first");
+      document.getElementById("second").classList.remove("second");
+      document.getElementById("third").classList.remove("third");
+      document.getElementById("first").classList.add("stretcher");
+      document.getElementById("second").classList.add("stretcher");
+      document.getElementById("third").classList.add("stretcher");
+      setTimeout(() => {
+        document.getElementById("first").classList.remove("stretcher");
+        document.getElementById("second").classList.remove("stretcher");
+        document.getElementById("third").classList.remove("stretcher");
+      }, 1500)
     }
   }
 
 
   handleClickHide = () => {
-    document.getElementById('mobile-icons').style.opacity = 0;
-    document.getElementById('mobile-icons').style.visibility = 'hidden';
-    document.getElementById('lines').style.display = 'initial'
-    document.getElementById('x').style.display = 'none'
+    document.getElementById('mobile-icons').style.top = '-100px';
+
     if (document.getElementById('projectsHeader')) {
       document.getElementById('projectsHeader').style['margin-top'] = '100px'
     }
@@ -31,33 +67,45 @@ class Header extends Component {
       <>
       <div className = 'mobileHeader'>
         <Link onClick={this.handleClickHide} to ='/' className = 'logo color-block mobile'/>
-        <span id = 'lines' onClick={this.handleClickShow} >
-          <span class="iconify lines"  data-icon="simple-line-icons:menu" data-inline="false"></span>
-        </span>
-        <span id = 'x' onClick={this.handleClickHide} >
-            <span class="iconify x" data-icon="simple-line-icons:close" data-inline="false"></span>
+        <span id = 'lines' onClick={ () => {
+          this.handleClickShow()}} >
+          <div class='line' id='first'></div>
+          <div class='line' id='second'></div>
+          <div class='line' id='third'></div>
         </span>
       </div>
       <div className = 'mobile-icons' id ='mobile-icons'>
         <div className = 'nav-icons-mobile'>
           <div >
-            <Link onClick={this.handleClickHide} to='/'>
+            <Link onClick={ () => {
+                this.setPath('/')
+                this.handleClickHide()
+              }
+            } to='/'>
               <span>
-                <span>home</span>
+                <span className = {(this.state.path === '/') ? 'selected' : ''} >home</span>
               </span>
             </Link>
           </div>
           <div >
-            <Link onClick={this.handleClickHide} to='/about'>
+            <Link onClick={() => {
+              this.setPath('/about')
+              this.handleClickHide()
+            }
+            } to='/about'>
               <span>
-                <span>about</span>
+                <span className = {(this.state.path === '/about') ? 'selected' : ''}>about</span>
               </span>
             </Link>
           </div>
           <div >
-            <Link onClick={this.handleClickHide} to='projects'>
+            <Link onClick={ () => {
+                this.setPath('/projects')
+                this.handleClickHide()
+              }
+            } to='/projects'>
               <span>
-                <span>projects</span>
+                <span className = {(this.state.path === '/projects') ? 'selected' : ''}>projects</span>
               </span>
             </Link>
           </div>
@@ -74,4 +122,4 @@ class Header extends Component {
   }
 }
  
-export default Header;
+export default withRouter(Header);

@@ -12,7 +12,7 @@ class AboutPage extends Component {
   render() {
     return (
       <>
-        <Sider path={this.props.location.pathname} />
+
         <About/>
       </>
     );

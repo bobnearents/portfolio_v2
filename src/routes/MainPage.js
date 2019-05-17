@@ -13,7 +13,7 @@ class MainPage extends Component {
   render() {
     return (
       <>
-      <Sider path={this.props.location.pathname} />
+      
       <Intro/>
       </>
     );

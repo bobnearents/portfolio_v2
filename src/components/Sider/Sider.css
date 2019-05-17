@@ -9,6 +9,31 @@
   justify-content: space-around;
   align-items: center;
   z-index: 1;
+  animation:entrance 500ms 100ms backwards;
+}
+
+.sidebar > * {
+  animation: fadeIn 1s 800ms backwards;
+}
+
+@keyframes fadeIn{
+  0% {
+    opacity:0
+  }
+  100% {
+    opacity:1
+  }
+}
+
+@keyframes entrance {
+  0% {
+    position: absolute;
+    left:-250px;
+  }
+  100% {
+    position: fixed;
+    left:0;
+  }
 }
 
 .nav-icons {
@@ -103,6 +128,8 @@
     display: none;
   }
 }
+
+
 
 
 

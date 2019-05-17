@@ -11,7 +11,7 @@ class ResumePage extends Component {
   render() {
     return (
       <>
-        <Sider path={this.props.location.pathname} />
+
       </>
     );
   }
