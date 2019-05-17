@@ -15,14 +15,14 @@ class Header extends Component {
     })
    }
 
-  handleClickShow = () => {
+  handleClick = () => {
     if (!this.state.mobileMenu) {
       this.setState({
         mobileMenu:true
       })
       document.getElementById('mobile-icons').style.top = '100px';
       if (document.getElementById('projectsHeader')){
-        document.getElementById('projectsHeader').style['margin-top']='200px'
+        document.getElementById('projectsHeader').style['margin-top']='220px'
       }
 
       document.getElementById("first").classList.add("first", "stretcher");
@@ -38,7 +38,7 @@ class Header extends Component {
       this.setState({
         mobileMenu:false
       })
-      this.handleClickHide()
+      this.handleHide()
       document.getElementById("first").classList.remove("first");
       document.getElementById("second").classList.remove("second");
       document.getElementById("third").classList.remove("third");
@@ -54,11 +54,10 @@ class Header extends Component {
   }
 
 
-  handleClickHide = () => {
+  handleHide = () => {
     document.getElementById('mobile-icons').style.top = '-100px';
-
     if (document.getElementById('projectsHeader')) {
-      document.getElementById('projectsHeader').style['margin-top'] = '100px'
+      document.getElementById('projectsHeader').style['margin-top'] = '130px'
     }
   }
 
@@ -66,9 +65,9 @@ class Header extends Component {
     return ( 
       <>
       <div className = 'mobileHeader'>
-        <Link onClick={this.handleClickHide} to ='/' className = 'logo color-block mobile'/>
+        <Link onClick={this.handleClick} to ='/' className = 'logo color-block mobile'/>
         <span id = 'lines' onClick={ () => {
-          this.handleClickShow()}} >
+          this.handleClick()}} >
           <div class='line' id='first'></div>
           <div class='line' id='second'></div>
           <div class='line' id='third'></div>
@@ -79,7 +78,7 @@ class Header extends Component {
           <div >
             <Link onClick={ () => {
                 this.setPath('/')
-                this.handleClickHide()
+                this.handleClick()
               }
             } to='/'>
               <span>
@@ -90,7 +89,7 @@ class Header extends Component {
           <div >
             <Link onClick={() => {
               this.setPath('/about')
-              this.handleClickHide()
+              this.handleClick()
             }
             } to='/about'>
               <span>
@@ -101,7 +100,7 @@ class Header extends Component {
           <div >
             <Link onClick={ () => {
                 this.setPath('/projects')
-                this.handleClickHide()
+                this.handleClick()
               }
             } to='/projects'>
               <span>

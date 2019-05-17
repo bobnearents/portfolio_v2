@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../../assets/logo-opaque.png'
 import './About.css'
 
 class About extends Component {

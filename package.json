@@ -15,6 +15,9 @@
     "react-transition-group": "^4.0.1"
   },
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy": "now ./build",
+    "postdeploy":"now alias https://portfolio.bobnearents.now.sh bobnearents.com",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

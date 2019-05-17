@@ -93,12 +93,11 @@
   height:6px;
   background:whitesmoke;
   border-radius:10px;
-  transition:transform 1s, opacity 1s;
+  transition:transform 1s, height 1s;
 }
 
 .second{
-  transform: skewY(90deg);
-  opacity:0;
+  transform:translateX(100px)
 }
 
 .first, .third {
@@ -107,11 +106,11 @@
 }
 
 .first {
-  transform: rotate(225deg)
+  transform: rotate(-135deg)
 }
 
 .third {
-  transform:rotate(315deg)
+  transform:rotate(135deg)
 }
 
 @keyframes stretch {

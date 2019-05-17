@@ -15,13 +15,13 @@ function App({location}) {
     return (
 
         <div className="App">
-          <img id = 'logo' src={logo} />
+        <img id = 'logo' src={logo} />
         <Header />
         <Sider />
         <TransitionGroup className="transition-group">
           <CSSTransition
             key={location.key}
-            timeout={{ enter: 300, exit: 300 }}
+            timeout={{ enter: 600, exit: 600 }}
             classNames={'fade'}
           >
             <section className="route-section">

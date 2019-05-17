@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Description from '../Description/Description'
 import './Intro.css'
-import logo from '../../assets/logo-opaque.png'
 import CallToAction from '../CallToAction/CallToAction';
 
 class Intro extends Component {
